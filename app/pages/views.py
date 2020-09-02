@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Good
 
 def index(request):
-    good = {
-        "items": Good.objects.all()
+    goods = {
+        "items":Good.objects.all()
     }
-    return render(request, 'pages/index.html', good)
+    return render(request, 'pages/index.html', goods)
 
 def products(request):
     return render(request, 'pages/products.html')
@@ -13,10 +13,10 @@ def products(request):
 def special_offer(request):
     return render(request, 'pages/special_offer.html')
 
-def product(request, id):
-    product = get_object_or_404(Good, pk=id)
-    context = {'Product': product}
-    return render(request, 'pages/product_details.html', context=contact)
+def product(request, product_id):
+    product = get_object_or_404(Good, pk=product_id)
+    context = {'product': product}
+    return render(request, 'pages/product_details.html', context=context)
 
 def compair(request):
     return render(request, 'pages/compair.html')
