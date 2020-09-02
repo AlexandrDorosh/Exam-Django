@@ -1,0 +1,25 @@
+#header{
+    background: paleturquoise;
+    color: black;
+}
+#header a {
+    background: black;
+    color: paleturquoise;
+}
+#header a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+#header h1{
+    font-size: 24px;
+    color: black;
+}
+.column-actions_,
+.field-actions_{
+    text-align: center;
+}
+div.breadcrumbs {
+    background-color: black;
+    color: paleturquoise;
+}
