@@ -461,6 +461,29 @@
                           </div>
                         </li>
                       </ul>	
+                      <ul class="thumbnails"> 
+                        {% for item in items %} 
+                    <li class="span3">
+                          <div class="thumbnail">
+                          <a href="{% url 'product' item.id %}"></a><img src="{{item.image.url}}" alt=""/></a>
+                              <div class="caption">
+                                <h5>{{ item.name }}</h5>
+                                  <p> 
+                                        {{ item.description }} 
+                                  </p>
+                                      <h4 style="text-align:center"><a class="btn" href="{% url 'product details' %}"> <i class="fas fa-search-plus"></i></a> <a class="btn" href="#">Add to <i class="fas fa-shopping-cart"></i></a> <a class="btn btn-primary" href="#">{{ item.price }} грн</a>
+                                      {% if user.is_superuser %}
+                                    <a class="btn" href="#">Delete <i class="fas fa-trash"></i></a>
+                                    <a class="btn" href="#">Edit<i class="fas fa-pen-square"></i></a>
+                                      {% endif %}
+                              </h4>
+                              </div>
+                          </div>
+                    </li>
+                  {% endfor %}
+                  </ul> 
+
+
         
                 </div>
                 </div>
